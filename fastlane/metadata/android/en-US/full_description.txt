@@ -1,0 +1,15 @@
+Do you own a device with an OLED screen and run a long-running background task on it?  
+And, do you want that task to keep running while minimizing battery use and avoiding screen burn-in?  
+This app is perfect for that situation!
+
+This app shows the black screen when it starts, and prevents the device from sleeping by acquiring the screen wake-lock. It is intended for devices that have an OLED display.
+
+By keeping the screen black, processing in the background is not stopped/restricted unlike putting the device to sleep,
+Unlike simply keeping the screen on, it also does not cause OLED burn-in.
+
+How to use:
+
+When you launch this app, the black screen will appear.
+This app will enable the screen's wake-lock and prevent the device from entering sleep mode. That's all.
+
+To close this app, swipe from the top or bottom edge of the screen to reveal the navigation bar, tap the square button to open the recent-apps list, and close this app from it. This app doesn't have exit function itself.

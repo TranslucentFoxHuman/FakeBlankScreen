@@ -1,0 +1,1 @@
+An application that only displays a black screen to reduce power consumption and prevent screen burning on the OLED display.
