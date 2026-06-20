@@ -11,13 +11,17 @@
 
 package net.tlfoxhuman.fakeblankscreen
 
+import android.app.PendingIntent
 import android.content.Context
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.os.PowerManager
+import android.service.quicksettings.TileService
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -59,5 +63,32 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         wakelock.release()
         super.onDestroy()
+    }
+}
+
+@RequiresApi(Build.VERSION_CODES.N)
+class FBSTileService : TileService() {
+    override fun onTileAdded() {
+        super.onTileAdded()
+    }
+    override fun onStartListening() {
+        super.onStartListening()
+    }
+    override fun onStopListening() {
+        super.onStopListening()
+    }
+    override fun onClick() {
+        val context = this.applicationContext
+        val intent = Intent(this, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+        if (Build.VERSION.SDK_INT >= 34) {
+            val pIntent = PendingIntent.getActivity(context,0,intent, PendingIntent.FLAG_IMMUTABLE)
+            startActivityAndCollapse(pIntent)
+        } else {
+            startActivityAndCollapse(intent)
+        }
+    }
+    override fun onTileRemoved() {
+        super.onTileRemoved()
     }
 }
