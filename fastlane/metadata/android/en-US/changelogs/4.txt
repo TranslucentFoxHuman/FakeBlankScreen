@@ -1,0 +1,1 @@
+Fixed release lint fails in gradle build in outside of Android Studio
