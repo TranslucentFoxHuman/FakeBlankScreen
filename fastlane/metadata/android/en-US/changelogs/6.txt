@@ -1,0 +1,1 @@
+Removed extra dependencies. As a result, the minimum-targeted version of Android has been lowered to Android 3 (API 11), and the size of the APK has been reduced to about 60KiB. (Thanks to ebraminio!)
