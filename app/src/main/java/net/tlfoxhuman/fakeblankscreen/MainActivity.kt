@@ -12,6 +12,7 @@
 package net.tlfoxhuman.fakeblankscreen
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
@@ -23,9 +24,8 @@ import android.view.View
 import android.view.WindowInsets
 import android.view.WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : Activity() {
 
     private lateinit var wakelock: PowerManager.WakeLock
 
